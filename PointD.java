@@ -1,4 +1,5 @@
 abstract class PointD {
+    abstract int distanceToO();
     public String toString() {
         return "new " + getClass().getName() + "()";
     }
@@ -15,6 +16,11 @@ class CartesianPt extends PointD {
     //--------------------------------
 
     @Override
+    int distanceToO() {
+        return (int)Math.sqrt(x * x + y * y);
+    }
+
+    @Override
     public String toString() {
         return "new " + getClass().getName() + "(" + x + ", " + y + ")";
     }
@@ -29,6 +35,11 @@ class ManhattanPt extends PointD {
         y = _y;
     }
     //--------------------------------
+
+    @Override
+    int distanceToO() {
+        return x + y;
+    }
 
     @Override
     public String toString() {
