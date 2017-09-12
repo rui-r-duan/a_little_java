@@ -27,4 +27,5 @@ class Thyme extends SeasoningD {
 }
 
 class Sage extends SeasoningD {
+
 }
