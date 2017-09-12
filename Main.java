@@ -73,5 +73,18 @@ public class Main {
                 point5.closerToO(point6));
         System.out.println(point6 + ".closerToO(" + point4 + "): " +
                 point6.closerToO(point4));
+
+        System.out.println("\nChapter 3\n");
+        PizzaD pizza1 = new Anchovy(new Olive(new Anchovy(new Anchovy(
+                new Cheese(new Crust())))));
+        System.out.println(pizza1);
+
+        PizzaD pizza2 = new Anchovy(new Crust());
+        System.out.println(pizza2 + ".removeAnchovy(): " + pizza2.removeAnchovy());
+        PizzaD pizza3 = new Anchovy(new Anchovy(new Crust()));
+        System.out.println(pizza3 + ".removeAnchovy(): " + pizza3.removeAnchovy());
+        PizzaD pizza4 = new Olive(new Cheese(new Anchovy(new Anchovy(new Crust()))));
+        System.out.println(pizza4 + ".removeAnchovy(): " + pizza4.removeAnchovy());
+        System.out.println(pizza1 + ".removeAnchovy(): " + pizza1.removeAnchovy());
     }
 }
