@@ -71,7 +71,7 @@ public class Main {
         CartesianPt point6 = new CartesianPt(3, 4);
         System.out.println(point5 + ".closerToO(" + point6 + "): " +
                 point5.closerToO(point6));
-//        System.out.println(point6 + ".closerToO(" + point4 + "): " +
-//                point6.closerToO(point4));
+        System.out.println(point6 + ".closerToO(" + point4 + "): " +
+                point6.closerToO(point4));
     }
 }

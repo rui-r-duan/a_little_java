@@ -1,4 +1,7 @@
 abstract class PointD {
+    boolean closerToO(PointD p) {
+        return distanceToO() <= p.distanceToO();
+    }
     abstract int distanceToO();
     public String toString() {
         return "new " + getClass().getName() + "()";
@@ -20,10 +23,6 @@ class CartesianPt extends PointD {
         return (int)Math.sqrt(x * x + y * y);
     }
 
-    boolean closerToO(CartesianPt p) {
-        return distanceToO() <= p.distanceToO();
-    }
-
     @Override
     public String toString() {
         return "new " + getClass().getName() + "(" + x + ", " + y + ")";
@@ -43,10 +42,6 @@ class ManhattanPt extends PointD {
     @Override
     int distanceToO() {
         return x + y;
-    }
-
-    boolean closerToO(ManhattanPt p) {
-        return distanceToO() <= p.distanceToO();
     }
 
     @Override
