@@ -1,5 +1,6 @@
 abstract class KebabD {
     abstract boolean isVeggie();
+    abstract Object whatHolder();
     public String toString() {
         return "new " + getClass().getName() + "()";
     }
@@ -13,6 +14,9 @@ class Holder extends KebabD {
     //--------------------------------
     boolean isVeggie() {
         return true;
+    }
+    Object whatHolder() {
+        return o;
     }
     public String toString() {
         return "new " + getClass().getName() + "(" + o + ")";
@@ -28,6 +32,9 @@ class Shallot extends KebabD {
     boolean isVeggie() {
         return k.isVeggie();
     }
+    Object whatHolder() {
+        return k.whatHolder();
+    }
     public String toString() {
         return "new " + getClass().getName() + "(" + k + ")";
     }
@@ -42,6 +49,9 @@ class Shrimp extends KebabD {
     boolean isVeggie() {
         return false;
     }
+    Object whatHolder() {
+        return k.whatHolder();
+    }
     public String toString() {
         return "new " + getClass().getName() + "(" + k + ")";
     }
@@ -55,6 +65,43 @@ class Radish extends KebabD {
     //--------------------------------
     boolean isVeggie() {
         return k.isVeggie();
+    }
+    Object whatHolder() {
+        return k.whatHolder();
+    }
+    public String toString() {
+        return "new " + getClass().getName() + "(" + k + ")";
+    }
+}
+
+class GreenPepper extends KebabD {
+    KebabD k;
+    GreenPepper(KebabD _k) {
+        k = _k;
+    }
+    //--------------------------------
+    boolean isVeggie() {
+        return k.isVeggie();
+    }
+    Object whatHolder() {
+        return k.whatHolder();
+    }
+    public String toString() {
+        return "new " + getClass().getName() + "(" + k + ")";
+    }
+}
+
+class Zucchini extends KebabD {
+    KebabD k;
+    Zucchini(KebabD _k) {
+        k = _k;
+    }
+    //--------------------------------
+    boolean isVeggie() {
+        return k.isVeggie();
+    }
+    Object whatHolder() {
+        return k.whatHolder();
     }
     public String toString() {
         return "new " + getClass().getName() + "(" + k + ")";
