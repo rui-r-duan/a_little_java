@@ -86,5 +86,7 @@ public class Main {
         PizzaD pizza4 = new Olive(new Cheese(new Anchovy(new Anchovy(new Crust()))));
         System.out.println(pizza4 + ".removeAnchovy(): " + pizza4.removeAnchovy());
         System.out.println(pizza1 + ".removeAnchovy(): " + pizza1.removeAnchovy());
+        PizzaD pizza5 = new Cheese(new Anchovy(new Cheese(new Crust())));
+        System.out.println(pizza5 + ".removeAnchovy(): " + pizza5.removeAnchovy());
     }
 }

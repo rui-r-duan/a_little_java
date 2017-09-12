@@ -60,7 +60,7 @@ class Anchovy extends PizzaD {
     }
     //--------------------------------
     PizzaD removeAnchovy() {
-        return new Crust(); // bug!
+        return p.removeAnchovy();
     }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
