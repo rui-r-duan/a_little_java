@@ -1,3 +1,5 @@
+import sun.util.resources.cldr.ta.CalendarData_ta_IN;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("\nChapter 1\n");
@@ -57,5 +59,19 @@ public class Main {
         System.out.println(kebab4 + ": " + kebab4.isVeggie());
         KebabD kebab5 = new Shallot(new Radish(new Holder(new Boolean(false))));
         System.out.println(kebab5 + ": " + kebab5.isVeggie());
+
+        System.out.println("\nPointD.closerToO()");
+        ManhattanPt point3 = new ManhattanPt(3, 4);
+        ManhattanPt point4 = new ManhattanPt(1, 5);
+        System.out.println(point3 + ".closerToO(" + point4 + "): " +
+                point3.closerToO(point4));
+        System.out.println(point4 + ".closerToO(" + point3 + "): " +
+                point4.closerToO(point3));
+        CartesianPt point5 = new CartesianPt(12, 5);
+        CartesianPt point6 = new CartesianPt(3, 4);
+        System.out.println(point5 + ".closerToO(" + point6 + "): " +
+                point5.closerToO(point6));
+//        System.out.println(point6 + ".closerToO(" + point4 + "): " +
+//                point6.closerToO(point4));
     }
 }
