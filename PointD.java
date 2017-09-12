@@ -1,4 +1,13 @@
 abstract class PointD {
+    int x;
+    int y;
+
+    PointD(int _x, int _y) {
+        x = _x;
+        y = _y;
+    }
+    //--------------------------------
+
     boolean closerToO(PointD p) {
         return distanceToO() <= p.distanceToO();
     }
@@ -13,8 +22,7 @@ class CartesianPt extends PointD {
     int y;
 
     CartesianPt(int _x, int _y) {
-        x = _x;
-        y = _y;
+        super(_x, _y); // without this, compiler reports error "There is no default constructor available in 'PointD'"
     }
     //--------------------------------
 
@@ -34,8 +42,7 @@ class ManhattanPt extends PointD {
     int y;
 
     ManhattanPt(int _x, int _y) {
-        x = _x;
-        y = _y;
+        super(_x, _y);
     }
     //--------------------------------
 
