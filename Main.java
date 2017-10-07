@@ -72,7 +72,7 @@ public class Main {
         System.out.println(point6 + ".closerToO(" + point4 + "): " +
                 point6.closerToO(point4));
 
-        System.out.println("\nChapter 3. What's New?\n");
+        System.out.println("\nChapter 3. What's New?\nInterpreter and Composite Patterns\n");
         PizzaD pizza1 = new Anchovy(new Olive(new Anchovy(new Anchovy(
                 new Cheese(new Crust())))));
         System.out.println(pizza1);
@@ -105,7 +105,11 @@ public class Main {
         System.out.println(pizza8 + ".substituteAnchovybyCheese():\n" +
                 pizza8.substituteAnchovybyCheese());
 
-        System.out.println("\nChapter 4. Come to Our Carousel\n");
+        System.out.println("\nChapter 4. Come to Our Carousel\nVisitor Pattern\n");
         System.out.println(shish2 + ".onlyOnions(): " + shish2.onlyOnions());
+        System.out.println(shish1 + ": " + shish1.isVegetarian() + "\n" +
+                shish2 + ": " + shish2.isVegetarian() + "\n" +
+                shish3 + ": " + shish3.isVegetarian() + "\n" +
+                shish4 + ": " + shish4.isVegetarian());
     }
 }
