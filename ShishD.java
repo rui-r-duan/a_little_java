@@ -13,6 +13,9 @@ class Skewer extends ShishD {
     boolean isVegetarian() {
         return ivFn.forSkewer();
     }
+    public String toString() {
+        return "new " + getClass().getName() + "()";
+    }
 }
 
 class Onion extends ShishD {

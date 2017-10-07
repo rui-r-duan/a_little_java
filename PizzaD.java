@@ -1,5 +1,7 @@
-// This is similar to the interpreter and composite patterns.
 abstract class PizzaD {
+    RemAV remFn = new RemAV();
+    TopAwCV topFn = new TopAwCV();
+    SubAwCV subFn = new SubAwCV();
     abstract PizzaD removeAnchovy();
     abstract PizzaD topAnchovywithCheese();
     abstract PizzaD substituteAnchovybyCheese();
@@ -9,11 +11,12 @@ abstract class PizzaD {
 }
 
 class Crust extends PizzaD {
-    PizzaD removeAnchovy() {
-        return new Crust();
+    PizzaD removeAnchovy() { return remFn.forCrust(); }
+    PizzaD topAnchovywithCheese() { return topFn.forCrust(); }
+    PizzaD substituteAnchovybyCheese() { return subFn.forCrust(); }
+    public String toString() {
+        return "new " + getClass().getName() + "()";
     }
-    PizzaD topAnchovywithCheese() { return new Crust(); }
-    PizzaD substituteAnchovybyCheese() { return new Crust(); }
 }
 
 class Cheese extends PizzaD {
@@ -22,11 +25,9 @@ class Cheese extends PizzaD {
         p = _p;
     }
     //--------------------------------
-    PizzaD removeAnchovy() {
-        return new Cheese(p.removeAnchovy());
-    }
-    PizzaD topAnchovywithCheese() { return new Cheese(p.topAnchovywithCheese()); }
-    PizzaD substituteAnchovybyCheese() { return new Cheese(p.substituteAnchovybyCheese()); }
+    PizzaD removeAnchovy() { return remFn.forCheese(p); }
+    PizzaD topAnchovywithCheese() { return topFn.forCheese(p); }
+    PizzaD substituteAnchovybyCheese() { return subFn.forCheese(p); }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
     }
@@ -38,11 +39,9 @@ class Olive extends PizzaD {
         p = _p;
     }
     //--------------------------------
-    PizzaD removeAnchovy() {
-        return new Olive(p.removeAnchovy());
-    }
-    PizzaD topAnchovywithCheese() { return new Olive(p.topAnchovywithCheese()); }
-    PizzaD substituteAnchovybyCheese() { return new Olive(p.substituteAnchovybyCheese()); }
+    PizzaD removeAnchovy() { return remFn.forOlive(p); }
+    PizzaD topAnchovywithCheese() { return topFn.forOlive(p); }
+    PizzaD substituteAnchovybyCheese() { return subFn.forOlive(p); }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
     }
@@ -54,11 +53,9 @@ class Sausage extends PizzaD {
         p = _p;
     }
     //--------------------------------
-    PizzaD removeAnchovy() {
-        return new Sausage(p.removeAnchovy());
-    }
-    PizzaD topAnchovywithCheese() { return new Sausage(p.topAnchovywithCheese()); }
-    PizzaD substituteAnchovybyCheese() { return new Sausage(p.substituteAnchovybyCheese()); }
+    PizzaD removeAnchovy() { return remFn.forSausage(p); }
+    PizzaD topAnchovywithCheese() { return topFn.forSausage(p); }
+    PizzaD substituteAnchovybyCheese() { return subFn.forSausage(p); }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
     }
@@ -66,15 +63,11 @@ class Sausage extends PizzaD {
 
 class Anchovy extends PizzaD {
     PizzaD p;
-    Anchovy(PizzaD _p) {
-        p = _p;
-    }
+    Anchovy(PizzaD _p) { p = _p; }
     //--------------------------------
-    PizzaD removeAnchovy() {
-        return p.removeAnchovy();
-    }
-    PizzaD topAnchovywithCheese() { return new Cheese(new Anchovy(p.topAnchovywithCheese())); }
-    PizzaD substituteAnchovybyCheese() { return new Cheese(p.substituteAnchovybyCheese()); }
+    PizzaD removeAnchovy() { return remFn.forAnchovy(p); }
+    PizzaD topAnchovywithCheese() { return topFn.forAnchovy(p); }
+    PizzaD substituteAnchovybyCheese() { return subFn.forAnchovy(p); }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
     }
@@ -87,9 +80,11 @@ class Spinach extends PizzaD {
     PizzaD p;
     Spinach(PizzaD _p) { p = _p; }
     //--------------------------------
-    PizzaD removeAnchovy() { return new Spinach(p.removeAnchovy()); }
-    PizzaD topAnchovywithCheese() { return new Spinach(p.topAnchovywithCheese()); }
-    PizzaD substituteAnchovybyCheese() { return new Spinach(p.substituteAnchovybyCheese()); }
+    PizzaD removeAnchovy() {
+        return remFn.forSpinach(p);
+    }
+    PizzaD topAnchovywithCheese() { return topFn.forSpinach(p); }
+    PizzaD substituteAnchovybyCheese() { return subFn.forSpinach(p); }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
     }

@@ -107,9 +107,15 @@ public class Main {
 
         System.out.println("\nChapter 4. Come to Our Carousel\nVisitor Pattern\n");
         System.out.println(shish2 + ".onlyOnions(): " + shish2.onlyOnions());
+        System.out.println("ShishD.isVegetarian():");
         System.out.println(shish1 + ": " + shish1.isVegetarian() + "\n" +
                 shish2 + ": " + shish2.isVegetarian() + "\n" +
                 shish3 + ": " + shish3.isVegetarian() + "\n" +
                 shish4 + ": " + shish4.isVegetarian());
+
+        System.out.println(pizza5 + ".removeAnchovy(): " + pizza5.removeAnchovy());
+        System.out.println(pizza7 + ".topAnchovywithCheese(): " + pizza7.topAnchovywithCheese());
+        System.out.println(pizza8 + ".substituteAnchovybyCheese():\n" +
+                pizza8.substituteAnchovybyCheese());
     }
 }
