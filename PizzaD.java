@@ -88,7 +88,7 @@ class Spinach extends PizzaD {
     Spinach(PizzaD _p) { p = _p; }
     //--------------------------------
     PizzaD removeAnchovy() { return new Spinach(p.removeAnchovy()); }
-    PizzaD topAnchovywithCheese() { return new Spinach(new Anchovy(p.topAnchovywithCheese())); }
+    PizzaD topAnchovywithCheese() { return new Spinach(p.topAnchovywithCheese()); }
     PizzaD substituteAnchovybyCheese() { return new Spinach(p.substituteAnchovybyCheese()); }
     public String toString() {
         return "new " + getClass().getName() + "(" + p + ")";
