@@ -5,4 +5,17 @@ class RemAV {
     PizzaD forSausage(PizzaD p) { return new Sausage(p.removeAnchovy()); }
     PizzaD forAnchovy(PizzaD p) { return p.removeAnchovy(); }
     PizzaD forSpinach(PizzaD p) { return new Spinach(p.removeAnchovy()); }
+
+    PieD forBot() {
+        return new Bottom();
+    }
+
+    PieD forTop(Object t, PieD r) {
+        if (new AnchovyTop().equals(t)) {
+            return r.remA();
+        }
+        else {
+            return new Top(t, r.remA());
+        }
+    }
 }

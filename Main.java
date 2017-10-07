@@ -93,16 +93,16 @@ public class Main {
         System.out.println(pizza6 + ".topAnchovywithCheese(): " + pizza6.topAnchovywithCheese());
         PizzaD pizza7 = new Olive(new Cheese(new Sausage(new Crust())));
         System.out.println(pizza7 + ".topAnchovywithCheese(): " + pizza7.topAnchovywithCheese());
-        System.out.println(pizza6 + ".removeAnchovy().topAnchovywithCheese():\n" +
+        System.out.println(pizza6 + ".removeAnchovy().topAnchovywithCheese():\n\t" +
                 pizza6.removeAnchovy().topAnchovywithCheese());
-        System.out.println(pizza6 + ".topAnchovywithCheese().removeAnchovy():\n" +
+        System.out.println(pizza6 + ".topAnchovywithCheese().removeAnchovy():\n\t" +
                 pizza6.topAnchovywithCheese().removeAnchovy());
 
         System.out.println("\nPizzaD.substituteAnchovybyCheese()");
-        System.out.println(pizza6 + ".substituteAnchovybyCheese():\n" +
+        System.out.println(pizza6 + ".substituteAnchovybyCheese():\n\t" +
                 pizza6.substituteAnchovybyCheese());
         PizzaD pizza8 = new Spinach(pizza6);
-        System.out.println(pizza8 + ".substituteAnchovybyCheese():\n" +
+        System.out.println(pizza8 + ".substituteAnchovybyCheese():\n\t" +
                 pizza8.substituteAnchovybyCheese());
 
         System.out.println("\nChapter 4. Come to Our Carousel\nVisitor Pattern\n");
@@ -115,7 +115,27 @@ public class Main {
 
         System.out.println(pizza5 + ".removeAnchovy(): " + pizza5.removeAnchovy());
         System.out.println(pizza7 + ".topAnchovywithCheese(): " + pizza7.topAnchovywithCheese());
-        System.out.println(pizza8 + ".substituteAnchovybyCheese():\n" +
+        System.out.println(pizza8 + ".substituteAnchovybyCheese():\n\t" +
                 pizza8.substituteAnchovybyCheese());
+
+        System.out.println("\nChapter 5. Objects Are People, Too\n");
+        PieD pie1 = new Top(new AnchovyTop(),
+                new Top(new Tuna(),
+                        new Top(new AnchovyTop(),
+                                new Bottom())));
+        PieD pie2 = new Top(new Tuna(),
+                new Top(new Integer(42),
+                        new Top(new AnchovyTop(),
+                                new Top(new Integer(5),
+                                        new Bottom()))));
+        System.out.println(pie1 + "\n" + pie2);
+        PieD pie3 = new Top(new Salmon(),
+                new Top(new AnchovyTop(),
+                        new Top(new Tuna(),
+                                new Top(new AnchovyTop(),
+                                        new Bottom()))));
+        PieD pie4 = pie3.remA();
+        System.out.println(pie3 + ".remA():\n\t" + pie4);
+        System.out.println(pie4 + ".remA(): " + pie4.remA());
     }
 }
