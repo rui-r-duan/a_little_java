@@ -140,5 +140,8 @@ public class Main {
 
         PieD pie5 = new Top(new AnchovyTop(), new Bottom());
         System.out.println(pie5 + ".remFish(new AnchovyTop()): " + pie5.remFish(new AnchovyTop()));
+
+        PieD pie6 = new Top(2, new Top(3, new Top(2, new Bottom())));
+        System.out.println(pie6 + ".remInt(3): " + pie6.remInt(3));
     }
 }
