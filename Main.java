@@ -151,5 +151,10 @@ public class Main {
 
         // With proper overriding NumD.equals(), the following test works.
         System.out.println(pie7 + ".rem(new Zero()):\n\t" + pie7.rem(new Zero()));
+
+        System.out.println(pie1 + ".subst(Salmon, Anchovy):\n\t" +
+                pie1.subst(new Salmon(), new AnchovyTop()));
+        PieD pie8 = new Top(3, new Top(2, new Top(3, new Bottom())));
+        System.out.println(pie8 + ".subst(5, 3): " + pie8.subst(5, 3));
     }
 }
