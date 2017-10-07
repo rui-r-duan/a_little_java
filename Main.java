@@ -1,5 +1,3 @@
-import sun.util.resources.cldr.ta.CalendarData_ta_IN;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("\nChapter 1\n");
@@ -79,6 +77,7 @@ public class Main {
                 new Cheese(new Crust())))));
         System.out.println(pizza1);
 
+        System.out.println("\nPizzaD.removeAnchovy()");
         PizzaD pizza2 = new Anchovy(new Crust());
         System.out.println(pizza2 + ".removeAnchovy(): " + pizza2.removeAnchovy());
         PizzaD pizza3 = new Anchovy(new Anchovy(new Crust()));
@@ -88,5 +87,15 @@ public class Main {
         System.out.println(pizza1 + ".removeAnchovy(): " + pizza1.removeAnchovy());
         PizzaD pizza5 = new Cheese(new Anchovy(new Cheese(new Crust())));
         System.out.println(pizza5 + ".removeAnchovy(): " + pizza5.removeAnchovy());
+
+        System.out.println("\nPizzaD.topAnchovywithCheese()");
+        PizzaD pizza6 = new Olive(new Anchovy(new Cheese(new Anchovy(new Crust()))));
+        System.out.println(pizza6 + ".topAnchovywithCheese(): " + pizza6.topAnchovywithCheese());
+        PizzaD pizza7 = new Olive(new Cheese(new Sausage(new Crust())));
+        System.out.println(pizza7 + ".topAnchovywithCheese(): " + pizza7.topAnchovywithCheese());
+        System.out.println(pizza6 + ".removeAnchovy().topAnchovywithCheese():\n" +
+                pizza6.removeAnchovy().topAnchovywithCheese());
+        System.out.println(pizza6 + ".topAnchovywithCheese().removeAnchovy():\n" +
+                pizza6.topAnchovywithCheese().removeAnchovy());
     }
 }
