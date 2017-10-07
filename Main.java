@@ -97,5 +97,9 @@ public class Main {
                 pizza6.removeAnchovy().topAnchovywithCheese());
         System.out.println(pizza6 + ".topAnchovywithCheese().removeAnchovy():\n" +
                 pizza6.topAnchovywithCheese().removeAnchovy());
+
+        System.out.println("\nPizzaD.substituteAnchovybyCheese()");
+        System.out.println(pizza6 + ".substituteAnchovybyCheese():\n" +
+                pizza6.substituteAnchovybyCheese());
     }
 }
