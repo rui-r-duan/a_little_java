@@ -5,6 +5,9 @@ abstract class NumD {
 }
 
 class Zero extends NumD {
+    public boolean equals(Object o) {
+        return (o instanceof Zero);
+    }
 }
 
 class OneMoreThan extends NumD {
@@ -14,6 +17,16 @@ class OneMoreThan extends NumD {
         predecessor = _p;
     }
     //--------------------------------
+
+    public boolean equals(Object o) {
+        if (o instanceof OneMoreThan) {
+            // downward casting
+            return predecessor.equals(((OneMoreThan)o).predecessor);
+        }
+        else {
+            return false;
+        }
+    }
 
     @Override
     public String toString() {

@@ -147,7 +147,9 @@ public class Main {
         System.out.println(pie5 + ".rem(new AnchovyTop()): " + pie5.rem(new AnchovyTop()));
         PieD pie7 = new Top(new AnchovyTop(), new Top(3, new Top(new Zero(), new Bottom())));
         System.out.println(pie7 + ".rem(3):\n\t" + pie7.rem(3));
-        // oops, need override NumD.equals()
+        System.out.println(pie6 + ".rem(new Bottom()): " + pie6.rem(new Bottom())); // Safe!
+
+        // With proper overriding NumD.equals(), the following test works.
         System.out.println(pie7 + ".rem(new Zero()):\n\t" + pie7.rem(new Zero()));
     }
 }
