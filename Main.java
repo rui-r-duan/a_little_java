@@ -137,5 +137,8 @@ public class Main {
         PieD pie4 = pie3.remA();
         System.out.println(pie3 + ".remA():\n\t" + pie4);
         System.out.println(pie4 + ".remA(): " + pie4.remA());
+
+        PieD pie5 = new Top(new AnchovyTop(), new Bottom());
+        System.out.println(pie5 + ".remFish(new AnchovyTop()): " + pie5.remFish(new AnchovyTop()));
     }
 }
