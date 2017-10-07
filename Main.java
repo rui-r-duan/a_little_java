@@ -143,5 +143,11 @@ public class Main {
 
         PieD pie6 = new Top(2, new Top(3, new Top(2, new Bottom())));
         System.out.println(pie6 + ".remInt(3): " + pie6.remInt(3));
+        System.out.println(pie6 + ".rem(3): " + pie6.rem(3));
+        System.out.println(pie5 + ".rem(new AnchovyTop()): " + pie5.rem(new AnchovyTop()));
+        PieD pie7 = new Top(new AnchovyTop(), new Top(3, new Top(new Zero(), new Bottom())));
+        System.out.println(pie7 + ".rem(3):\n\t" + pie7.rem(3));
+        // oops, need override NumD.equals()
+        System.out.println(pie7 + ".rem(new Zero()):\n\t" + pie7.rem(new Zero()));
     }
 }
