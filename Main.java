@@ -101,5 +101,8 @@ public class Main {
         System.out.println("\nPizzaD.substituteAnchovybyCheese()");
         System.out.println(pizza6 + ".substituteAnchovybyCheese():\n" +
                 pizza6.substituteAnchovybyCheese());
+        PizzaD pizza8 = new Spinach(pizza6);
+        System.out.println(pizza8 + ".substituteAnchovybyCheese():\n" +
+                pizza8.substituteAnchovybyCheese());
     }
 }
