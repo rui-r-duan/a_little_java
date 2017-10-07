@@ -134,15 +134,15 @@ public class Main {
                         new Top(new Tuna(),
                                 new Top(new AnchovyTop(),
                                         new Bottom()))));
-        PieD pie4 = pie3.remA();
+        PieD pie4 = pie3.rem(new AnchovyTop());
         System.out.println(pie3 + ".remA():\n\t" + pie4);
-        System.out.println(pie4 + ".remA(): " + pie4.remA());
+        System.out.println(pie4 + ".remA(): " + pie4.rem(new AnchovyTop()));
 
         PieD pie5 = new Top(new AnchovyTop(), new Bottom());
-        System.out.println(pie5 + ".remFish(new AnchovyTop()): " + pie5.remFish(new AnchovyTop()));
+        System.out.println(pie5 + ".remFish(new AnchovyTop()): " + pie5.rem(new AnchovyTop()));
 
         PieD pie6 = new Top(2, new Top(3, new Top(2, new Bottom())));
-        System.out.println(pie6 + ".remInt(3): " + pie6.remInt(3));
+        System.out.println(pie6 + ".remInt(3): " + pie6.rem(3));
         System.out.println(pie6 + ".rem(3): " + pie6.rem(3));
         System.out.println(pie5 + ".rem(new AnchovyTop()): " + pie5.rem(new AnchovyTop()));
         PieD pie7 = new Top(new AnchovyTop(), new Top(3, new Top(new Zero(), new Bottom())));
@@ -156,5 +156,7 @@ public class Main {
                 pie1.subst(new Salmon(), new AnchovyTop()));
         PieD pie8 = new Top(3, new Top(2, new Top(3, new Bottom())));
         System.out.println(pie8 + ".subst(5, 3): " + pie8.subst(5, 3));
+
+        System.out.println("\nChapter 6. Boring Protocols\n");
     }
 }
