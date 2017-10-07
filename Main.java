@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\nChapter 1\n");
+        System.out.println("\nChapter 1. Modern Toys\n");
         System.out.println(new Salt() + "\n" +
                 new Pepper() + "\n" +
                 new Thyme() + "\n" +
@@ -19,7 +19,7 @@ public class Main {
                 new Base(new Integer(5)) + "\n" +
                 new Base(new Boolean(false)));
 
-        System.out.println("\nChapter 2\n");
+        System.out.println("\nChapter 2. Methods to Our Madness\n");
         System.out.println("PointD.distanceToO():");
         PointD point1 = new CartesianPt(3, 4);
         PointD point2 = new ManhattanPt(3, 4);
@@ -72,7 +72,7 @@ public class Main {
         System.out.println(point6 + ".closerToO(" + point4 + "): " +
                 point6.closerToO(point4));
 
-        System.out.println("\nChapter 3\n");
+        System.out.println("\nChapter 3. What's New?\n");
         PizzaD pizza1 = new Anchovy(new Olive(new Anchovy(new Anchovy(
                 new Cheese(new Crust())))));
         System.out.println(pizza1);
@@ -104,5 +104,8 @@ public class Main {
         PizzaD pizza8 = new Spinach(pizza6);
         System.out.println(pizza8 + ".substituteAnchovybyCheese():\n" +
                 pizza8.substituteAnchovybyCheese());
+
+        System.out.println("\nChapter 4. Come to Our Carousel\n");
+        System.out.println(shish2 + ".onlyOnions(): " + shish2.onlyOnions());
     }
 }

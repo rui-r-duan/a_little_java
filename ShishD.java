@@ -1,4 +1,5 @@
 abstract class ShishD {
+    OnlyOnionsV ooFn = new OnlyOnionsV();
     abstract boolean onlyOnions();
     abstract boolean isVegetarian();
     public String toString() {
@@ -8,7 +9,7 @@ abstract class ShishD {
 
 class Skewer extends ShishD {
     boolean onlyOnions() {
-        return true;
+        return ooFn.forSkewer();
     }
     boolean isVegetarian() {
         return true;
@@ -23,7 +24,7 @@ class Onion extends ShishD {
     //--------------------------------
 
     boolean onlyOnions() {
-        return s.onlyOnions();
+        return ooFn.forOnion(s);
     }
     boolean isVegetarian() {
         return s.isVegetarian();
@@ -41,7 +42,7 @@ class Lamb extends ShishD {
     //--------------------------------
 
     boolean onlyOnions() {
-        return false;
+        return ooFn.forLamb(s);
     }
     boolean isVegetarian() {
         return false;
@@ -59,7 +60,7 @@ class Tomato extends ShishD {
     //--------------------------------
 
     boolean onlyOnions() {
-        return false;
+        return ooFn.forTomato(s);
     }
     boolean isVegetarian() {
         return s.isVegetarian();
