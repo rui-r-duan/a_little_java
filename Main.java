@@ -167,7 +167,7 @@ public class Main {
         PieD pie8 = new Top(3, new Top(2, new Top(3, new Bottom())));
         System.out.println(pie8 + ".subst(5, 3): " + pie8.accept(new SubstV(5, 3)));
 
-        System.out.println("\nChapter 6. Boring Protocols\n");
+        System.out.println("\nChapter 6. Boring Protocols\nComplete Visitor Pattern\n");
         PieD pie9 = new Top(new AnchovyTop(),
                 new Top(3,
                         new Top(new Zero(),
@@ -182,5 +182,7 @@ public class Main {
                                                 new Bottom())))));
         System.out.println(pie10 + ".accept(LtdSubst(2, Salmon, Anchovy)):\n\t" +
         pie10.accept(new LtdSubstV(2, new Salmon(), new AnchovyTop())));
+
+        System.out.println("\nChapter 7. Oh, My!\nTree\n");
     }
 }
