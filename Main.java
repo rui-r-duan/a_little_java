@@ -173,5 +173,14 @@ public class Main {
                         new Top(new Zero(),
                                 new Bottom())));
         System.out.println(pie9 + ".rem(RemV, Zero): " + pie9.accept(new RemV(new Zero())));
+
+        PieD pie10 = new Top(new AnchovyTop(),
+                new Top(new Tuna(),
+                        new Top(new AnchovyTop(),
+                                new Top(new Tuna(),
+                                        new Top(new AnchovyTop(),
+                                                new Bottom())))));
+        System.out.println(pie10 + ".accept(LtdSubst(2, Salmon, Anchovy)):\n\t" +
+        pie10.accept(new LtdSubstV(2, new Salmon(), new AnchovyTop())));
     }
 }
