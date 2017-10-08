@@ -183,7 +183,8 @@ public class Main {
         System.out.println(pie10 + ".accept(LtdSubst(2, Salmon, Anchovy)):\n\t" +
                 pie10.accept(new LtdSubstV(2, new Salmon(), new AnchovyTop())));
 
-        System.out.println("\nChapter 7. Oh, My!\nTree\n");
+        System.out.println("\nChapter 7. Oh, My!");
+        System.out.println("Tree and Visitors that produce distinct types\n");
         TreeD tree1 = new Flat(new Apple(),
                 new Flat(new Peach(),
                         new Bud()));
@@ -277,5 +278,11 @@ public class Main {
                                                 new Bud()))));
         System.out.println(tree8 + ".subst(Apple, Fig):\n" +
                 tree8.accept(new tSubstV(new Apple(), new Fig())));
+
+        System.out.println();
+        System.out.println(tree8 + ".occurs(Fig):\n" +
+                tree8.accept(new iOccursV(new Fig())));
+        System.out.println(tree7 + ".occurs(Fig):\n" +
+                tree7.accept(new iOccursV(new Fig())));
     }
 }
