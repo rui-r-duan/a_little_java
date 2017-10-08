@@ -1,5 +1,8 @@
 abstract class TreeD {
     abstract boolean accept(bTreeVisitorI ask);
+    public String toString() {
+        return "new " + getClass().getName() + "()";
+    }
 }
 
 class Bud extends TreeD {
@@ -19,6 +22,9 @@ class Flat extends TreeD {
     boolean accept(bTreeVisitorI ask) {
         return ask.forFlat(f, t);
     }
+    public String toString() {
+        return "new " + getClass().getName() + "(" + f + ", " + t + ")";
+    }
 }
 
 class Split extends TreeD {
@@ -31,5 +37,8 @@ class Split extends TreeD {
     //--------------------------------
     boolean accept(bTreeVisitorI ask) {
         return ask.forSplit(l, r);
+    }
+    public String toString() {
+        return "new " + getClass().getName() + "(" + l + ", " + r + ")";
     }
 }

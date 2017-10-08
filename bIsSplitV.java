@@ -1,3 +1,4 @@
+// This class checks whether a TreeD is constructed with Split and Bud ONLY.
 class bIsSplitV implements bTreeVisitorI {
     public boolean forBud() {
         return true;

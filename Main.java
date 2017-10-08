@@ -181,8 +181,59 @@ public class Main {
                                         new Top(new AnchovyTop(),
                                                 new Bottom())))));
         System.out.println(pie10 + ".accept(LtdSubst(2, Salmon, Anchovy)):\n\t" +
-        pie10.accept(new LtdSubstV(2, new Salmon(), new AnchovyTop())));
+                pie10.accept(new LtdSubstV(2, new Salmon(), new AnchovyTop())));
 
         System.out.println("\nChapter 7. Oh, My!\nTree\n");
+        TreeD tree1 = new Flat(new Apple(),
+                new Flat(new Peach(),
+                        new Bud()));
+        bIsFlatV isFlatV = new bIsFlatV();
+        bIsSplitV isSplitV = new bIsSplitV();
+        System.out.println(tree1 + "\n\t.isFlat? " + tree1.accept(isFlatV) +
+                "\n\t.isSplit? " + tree1.accept(isSplitV));
+        TreeD tree2 = new Flat(new Pear(), new Bud());
+        System.out.println(tree2 + "\n\t.isFlat? " + tree2.accept(isFlatV) +
+                "\n\t.isSplit? " + tree2.accept(isSplitV));
+        TreeD tree3 =
+                new Split(
+                        new Bud(),
+                        new Flat(
+                                new Fig(),
+                                new Split(
+                                        new Bud(),
+                                        new Bud())));
+        System.out.println(tree3 + "\n\t.isFlat? " + tree3.accept(isFlatV) +
+                "\n\t.isSplit? " + tree3.accept(isSplitV)); // false, false
+        TreeD tree4 = new Bud();
+        System.out.println(tree4 + "\n\t.isFlat? " + tree4.accept(isFlatV) +
+                "\n\t.isSplit? " + tree4.accept(isSplitV)); // true, true
+        TreeD tree5 =
+                new Split(
+                        new Split(
+                                new Bud(),
+                                new Flat(
+                                        new Lemon(),
+                                        new Bud())),
+                        new Flat(
+                                new Fig(),
+                                new Split(
+                                        new Bud(),
+                                        new Bud())));
+        System.out.println(tree5 + "\n\t.isFlat? " + tree5.accept(isFlatV) +
+                "\n\t.isSplit? " + tree5.accept(isSplitV)); // false, false
+        TreeD tree6 =
+                new Split(
+                        new Split(
+                                new Bud(),
+                                new Split(
+                                        new Bud(),
+                                        new Bud())),
+                        new Split(
+                                new Bud(),
+                                new Split(
+                                        new Bud(),
+                                        new Bud())));
+        System.out.println(tree6 + "\n\t.isFlat? " + tree6.accept(isFlatV) +
+                "\n\t.isSplit? " + tree6.accept(isSplitV)); // false, true
     }
 }

@@ -1,4 +1,7 @@
 abstract class FruitD {
+    public String toString() {
+        return "new " + getClass().getName() + "()";
+    }
 }
 
 class Peach extends FruitD {
