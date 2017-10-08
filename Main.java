@@ -284,5 +284,10 @@ public class Main {
                 tree8.accept(new iOccursV(new Fig())));
         System.out.println(tree7 + ".occurs(Fig):\n" +
                 tree7.accept(new iOccursV(new Fig())));
+
+        System.out.println("\nGeneral visitors that produce Object");
+        System.out.println(tree8 + ".isFlat?\n" + tree8.accept(new IsFlatV()));
+        System.out.println(tree8 + ".isSplit?\n" + tree8.accept(new IsSplitV()));
+        System.out.println(tree8 + ".occurs(Fig):\n" + tree8.accept(new OccursV(new Fig())));
     }
 }

@@ -3,6 +3,7 @@ abstract class TreeD {
     abstract boolean accept(bTreeVisitorI ask);
     abstract int accept(iTreeVisitorI ask);
     abstract TreeD accept(tTreeVisitorI ask);
+    abstract Object accept(TreeVisitorI ask);
     public String toString() {
         return "new " + getClass().getName() + "()";
     }
@@ -16,6 +17,9 @@ class Bud extends TreeD {
         return ask.forBud();
     }
     TreeD accept(tTreeVisitorI ask) {
+        return ask.forBud();
+    }
+    Object accept(TreeVisitorI ask) {
         return ask.forBud();
     }
 }
@@ -35,6 +39,9 @@ class Flat extends TreeD {
         return ask.forFlat(f, t);
     }
     TreeD accept(tTreeVisitorI ask) {
+        return ask.forFlat(f, t);
+    }
+    Object accept(TreeVisitorI ask) {
         return ask.forFlat(f, t);
     }
     public String toString() {
@@ -57,6 +64,9 @@ class Split extends TreeD {
         return ask.forSplit(l, r);
     }
     TreeD accept(tTreeVisitorI ask) {
+        return ask.forSplit(l, r);
+    }
+    Object accept(TreeVisitorI ask) {
         return ask.forSplit(l, r);
     }
     public String toString() {
