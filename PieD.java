@@ -1,6 +1,6 @@
 abstract class PieD {
     abstract PieD rem(RemV remFn, Object o);
-    abstract PieD subst(SubstV substFn, Object n, Object o);
+    abstract PieD subst(SubstV substFn);
     public String toString() {
         return "new " + getClass().getName() + "()";
     }
@@ -10,8 +10,8 @@ class Bottom extends PieD {
     PieD rem(RemV remFn, Object o) {
         return remFn.forBot(o);
     }
-    PieD subst(SubstV substFn, Object n, Object o) {
-        return substFn.forBot(n, o);
+    PieD subst(SubstV substFn) {
+        return substFn.forBot();
     }
     public String toString() {
         return "new " + getClass().getName() + "()";
@@ -30,8 +30,8 @@ class Top extends PieD {
         return remFn.forTop(t, r, o);
     }
 
-    PieD subst(SubstV substFn, Object n, Object o) {
-        return substFn.forTop(t, r, n, o);
+    PieD subst(SubstV substFn) {
+        return substFn.forTop(t, r);
     }
 
     public String toString() {

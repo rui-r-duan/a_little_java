@@ -135,9 +135,8 @@ public class Main {
                                 new Top(new AnchovyTop(),
                                         new Bottom()))));
 
-        // The following two variables are added for Chapter 6
+        // The following RemV and SubstV variables are added for Chapter 6
         RemV remFn = new RemV();
-        SubstV substFn = new SubstV();
 
         PieD pie4 = pie3.rem(remFn, new AnchovyTop());
         System.out.println(pie3 + ".remA():\n\t" + pie4);
@@ -158,9 +157,9 @@ public class Main {
         System.out.println(pie7 + ".rem(new Zero()):\n\t" + pie7.rem(remFn, new Zero()));
 
         System.out.println(pie1 + ".subst(Salmon, Anchovy):\n\t" +
-                pie1.subst(substFn, new Salmon(), new AnchovyTop()));
+                pie1.subst(new SubstV(new Salmon(), new AnchovyTop())));
         PieD pie8 = new Top(3, new Top(2, new Top(3, new Bottom())));
-        System.out.println(pie8 + ".subst(5, 3): " + pie8.subst(substFn, 5, 3));
+        System.out.println(pie8 + ".subst(5, 3): " + pie8.subst(new SubstV(5, 3)));
 
         System.out.println("\nChapter 6. Boring Protocols\n");
         PieD pie9 = new Top(new AnchovyTop(),
