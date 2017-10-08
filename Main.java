@@ -262,5 +262,20 @@ public class Main {
                                         new Flat(new Apple(),
                                                 new Bud()))));
         System.out.println(tree7 + ".height?\n\t" + tree7.accept(heightV));
+
+        System.out.println();
+        TreeD tree8 =
+                new Split(
+                        new Split(
+                                new Flat(new Fig(),
+                                        new Bud()),
+                                new Flat(new Fig(),
+                                        new Bud())),
+                        new Flat(new Fig(),
+                                new Flat(new Lemon(),
+                                        new Flat(new Apple(),
+                                                new Bud()))));
+        System.out.println(tree8 + ".subst(Apple, Fig):\n" +
+                tree8.accept(new tSubstV(new Apple(), new Fig())));
     }
 }

@@ -1,6 +1,8 @@
 abstract class TreeD {
+    // overloading: same method name but distinct consumed types
     abstract boolean accept(bTreeVisitorI ask);
-    abstract int accept(iTreeVisitorI ask); // overloading: same method name but distinct consumed types
+    abstract int accept(iTreeVisitorI ask);
+    abstract TreeD accept(tTreeVisitorI ask);
     public String toString() {
         return "new " + getClass().getName() + "()";
     }
@@ -11,6 +13,9 @@ class Bud extends TreeD {
         return ask.forBud();
     }
     int accept(iTreeVisitorI ask) {
+        return ask.forBud();
+    }
+    TreeD accept(tTreeVisitorI ask) {
         return ask.forBud();
     }
 }
@@ -27,6 +32,9 @@ class Flat extends TreeD {
         return ask.forFlat(f, t);
     }
     int accept(iTreeVisitorI ask) {
+        return ask.forFlat(f, t);
+    }
+    TreeD accept(tTreeVisitorI ask) {
         return ask.forFlat(f, t);
     }
     public String toString() {
@@ -46,6 +54,9 @@ class Split extends TreeD {
         return ask.forSplit(l, r);
     }
     int accept(iTreeVisitorI ask) {
+        return ask.forSplit(l, r);
+    }
+    TreeD accept(tTreeVisitorI ask) {
         return ask.forSplit(l, r);
     }
     public String toString() {
