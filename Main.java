@@ -136,36 +136,42 @@ public class Main {
                                         new Bottom()))));
 
         // The following RemV and SubstV variables are added for Chapter 6
-        RemV remFn = new RemV();
 
-        PieD pie4 = pie3.rem(remFn, new AnchovyTop());
+        PieD pie4 = pie3.accept(new RemV(new AnchovyTop()));
         System.out.println(pie3 + ".remA():\n\t" + pie4);
-        System.out.println(pie4 + ".remA(): " + pie4.rem(remFn, new AnchovyTop()));
+        System.out.println(pie4 + ".remA(): " + pie4.accept(new RemV(new AnchovyTop())));
 
         PieD pie5 = new Top(new AnchovyTop(), new Bottom());
-        System.out.println(pie5 + ".remFish(new AnchovyTop()): " + pie5.rem(remFn, new AnchovyTop()));
+        System.out.println(pie5 + ".remFish(new AnchovyTop()): " +
+                pie5.accept(new RemV(new AnchovyTop())));
 
         PieD pie6 = new Top(2, new Top(3, new Top(2, new Bottom())));
-        System.out.println(pie6 + ".remInt(3): " + pie6.rem(remFn, 3));
-        System.out.println(pie6 + ".rem(3): " + pie6.rem(remFn, 3));
-        System.out.println(pie5 + ".rem(new AnchovyTop()): " + pie5.rem(remFn, new AnchovyTop()));
-        PieD pie7 = new Top(new AnchovyTop(), new Top(3, new Top(new Zero(), new Bottom())));
-        System.out.println(pie7 + ".rem(3):\n\t" + pie7.rem(remFn, 3));
-        System.out.println(pie6 + ".rem(new Bottom()): " + pie6.rem(remFn, new Bottom())); // Safe!
+        System.out.println(pie6 + ".remInt(3): " + pie6.accept(new RemV(3)));
+        System.out.println(pie6 + ".rem(3): " + pie6.accept(new RemV(3)));
+        System.out.println(pie5 + ".rem(new AnchovyTop()): " +
+                pie5.accept(new RemV(new AnchovyTop())));
+        PieD pie7 = new Top(new AnchovyTop(),
+                new Top(3,
+                        new Top(new Zero(), new Bottom())));
+        System.out.println(pie7 + ".rem(3):\n\t" +
+                pie7.accept(new RemV(3)));
+        System.out.println(pie6 + ".rem(new Bottom()): " +
+                pie6.accept(new RemV(new Bottom()))); // Safe!
 
         // With proper overriding NumD.equals(), the following test works.
-        System.out.println(pie7 + ".rem(new Zero()):\n\t" + pie7.rem(remFn, new Zero()));
+        System.out.println(pie7 + ".rem(new Zero()):\n\t" +
+                pie7.accept(new RemV(new Zero())));
 
         System.out.println(pie1 + ".subst(Salmon, Anchovy):\n\t" +
-                pie1.subst(new SubstV(new Salmon(), new AnchovyTop())));
+                pie1.accept(new SubstV(new Salmon(), new AnchovyTop())));
         PieD pie8 = new Top(3, new Top(2, new Top(3, new Bottom())));
-        System.out.println(pie8 + ".subst(5, 3): " + pie8.subst(new SubstV(5, 3)));
+        System.out.println(pie8 + ".subst(5, 3): " + pie8.accept(new SubstV(5, 3)));
 
         System.out.println("\nChapter 6. Boring Protocols\n");
         PieD pie9 = new Top(new AnchovyTop(),
                 new Top(3,
                         new Top(new Zero(),
                                 new Bottom())));
-        System.out.println(pie9 + ".rem(RemV, Zero): " + pie9.rem(remFn, new Zero()));
+        System.out.println(pie9 + ".rem(RemV, Zero): " + pie9.accept(new RemV(new Zero())));
     }
 }

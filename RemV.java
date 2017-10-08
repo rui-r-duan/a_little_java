@@ -1,14 +1,17 @@
-class RemV {
-    PieD forBot(Object o) {
+class RemV implements PieVisitorI {
+    Object o; // object to be removed
+    RemV(Object _o) { o = _o; }
+    //--------------------------------
+    public PieD forBot() {
         return new Bottom();
     }
 
-    PieD forTop(Object t, PieD r, Object o) {
+    public PieD forTop(Object t, PieD r) {
         if (o.equals(t)) {
-            return r.rem(this, o);
+            return r.accept(this);
         }
         else {
-            return new Top(t, r.rem(this, o));
+            return new Top(t, r.accept(this));
         }
     }
 }
