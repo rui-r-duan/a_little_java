@@ -5,10 +5,10 @@ class RemV {
 
     PieD forTop(Object t, PieD r, Object o) {
         if (o.equals(t)) {
-            return r.rem(o);
+            return r.rem(this, o);
         }
         else {
-            return new Top(t, r.rem(o));
+            return new Top(t, r.rem(this, o));
         }
     }
 }
