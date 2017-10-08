@@ -235,5 +235,32 @@ public class Main {
                                         new Bud())));
         System.out.println(tree6 + "\n\t.isFlat? " + tree6.accept(isFlatV) +
                 "\n\t.isSplit? " + tree6.accept(isSplitV)); // false, true
+
+        bHasFruitV hasFruitV = new bHasFruitV();
+        System.out.println("\n" + tree6 + ".hasFruit? " + tree6.accept(hasFruitV));
+        System.out.println(tree5 + ".hasFruit? " + tree5.accept(hasFruitV));
+        System.out.println(tree4 + ".hasFruit? " + tree4.accept(hasFruitV));
+        System.out.println(tree3 + ".hasFruit? " + tree3.accept(hasFruitV));
+        System.out.println(tree2 + ".hasFruit? " + tree2.accept(hasFruitV));
+        System.out.println(tree1 + ".hasFruit? " + tree1.accept(hasFruitV));
+
+        iHeightV heightV = new iHeightV();
+        System.out.println();
+        System.out.println(tree5 + ".height?\n\t" + tree5.accept(heightV));
+        System.out.println(tree6 + ".height?\n\t" + tree6.accept(heightV));
+        System.out.println(tree4 + ".height?\n\t" + tree4.accept(heightV));
+        System.out.println(tree3 + ".height?\n\t" + tree3.accept(heightV));
+        System.out.println(tree2 + ".height?\n\t" + tree2.accept(heightV));
+        System.out.println(tree1 + ".height?\n\t" + tree1.accept(heightV));
+        TreeD tree7 =
+                new Split(
+                        new Split(
+                                new Bud(),
+                                new Bud()),
+                        new Flat(new Fig(),
+                                new Flat(new Lemon(),
+                                        new Flat(new Apple(),
+                                                new Bud()))));
+        System.out.println(tree7 + ".height?\n\t" + tree7.accept(heightV));
     }
 }
