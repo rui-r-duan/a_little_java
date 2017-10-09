@@ -336,5 +336,23 @@ public class Main {
         PointD point9 = new ShadowedCartesianPt(1, 5, 1, 2);
         System.out.println(point6 + ".closerToO(" + point9 + "): " + point6.closerToO(point9));
         System.out.println(point9 + ".distanceToO(): " + point9.distanceToO());
+
+        System.out.println();
+        ShapeD circle1 = new Circle(10);
+        System.out.println(circle1 + ".hasPt(Cartisian(10,10))? " +
+                circle1.accept(new HasPtV(new CartesianPt(10, 10))));
+        ShapeD square1 = new Square(10);
+        System.out.println(square1 + ".hasPt(Cartisian(10,10))? " +
+                square1.accept(new HasPtV(new CartesianPt(10, 10))));
+        ShapeD circle2 = new Translation(new CartesianPt(5, 6), new Circle(10));
+        System.out.println(circle2 + ".hasPt(Cartisian(10,10))? " +
+                circle2.accept(new HasPtV(new CartesianPt(10, 10))));
+        ShapeD circle3 = new Translation(
+                new CartesianPt(5, 4),
+                new Translation(
+                        new CartesianPt(5, 6),
+                        new Circle(10)));
+        System.out.println(circle3 + ".hasPt(Cartisian(10,10))? " +
+                circle3.accept(new HasPtV(new CartesianPt(10, 10))));
     }
 }

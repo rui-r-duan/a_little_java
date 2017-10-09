@@ -1,5 +1,5 @@
 package littlejava.shape;
 
 public abstract class ShapeD {
-    abstract boolean accept(ShapeVisitorI ask);
+    public abstract boolean accept(ShapeVisitorI ask);
 }

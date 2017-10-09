@@ -2,12 +2,15 @@ package littlejava.shape;
 
 public class Circle extends ShapeD {
     int r;
-    Circle(int _r) {
+    public Circle(int _r) {
         r = _r;
     }
     //--------------------------------
     @Override
-    boolean accept(ShapeVisitorI ask) {
+    public boolean accept(ShapeVisitorI ask) {
         return ask.forCircle(r);
+    }
+    public String toString() {
+        return "new " + getClass().getName() + "(" + r + ")";
     }
 }
