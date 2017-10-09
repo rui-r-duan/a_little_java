@@ -326,5 +326,14 @@ public class Main {
                                         .add(new Integer(5)))));
         SetEvalV setEvalV = new SetEvalV();
         System.out.println(expr2 + ".eval():\n" + expr2.accept(setEvalV));
+
+        System.out.println("\nChapter 9. Be a Good Visitor\n");
+        PointD point7 = new ShadowedManhattanPt(2, 3, 1, 0);
+        System.out.println(point7 + ".distanceToO(): " + point7.distanceToO());
+        PointD point8 = new ShadowedCartesianPt(12, 5, 3, 4);
+        System.out.println(point8 + ".distanceToO(): " + point8.distanceToO());
+        PointD point9 = new ShadowedCartesianPt(1, 5, 1, 2);
+        System.out.println(point6 + ".closerToO(" + point9 + "): " + point6.closerToO(point9));
+        System.out.println(point9 + ".distanceToO(): " + point9.distanceToO());
     }
 }

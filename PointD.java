@@ -11,6 +11,9 @@ abstract class PointD {
     boolean closerToO(PointD p) {
         return distanceToO() <= p.distanceToO();
     }
+    PointD minus(PointD p) {
+        return new CartesianPt(x - p.x, y - p.y);
+    }
     abstract int distanceToO();
     public String toString() {
         return "new " + getClass().getName() + "(" + x + ", " + y + ")";
@@ -38,5 +41,43 @@ class ManhattanPt extends PointD {
     @Override
     int distanceToO() {
         return x + y;
+    }
+}
+
+class ShadowedManhattanPt extends ManhattanPt {
+    int dx;
+    int dy;
+    ShadowedManhattanPt(int _x, int _y, int _dx, int _dy) {
+        super(_x, _y);
+        dx = _dx;
+        dy = _dy;
+    }
+    //--------------------------------
+    @Override
+    int distanceToO() {
+        return super.distanceToO() + dx + dy;
+    }
+    @Override
+    public String toString() {
+        return "new " + getClass().getName() + "(" + x + ", " + y + ", " + dx+ ", " + dy + ")";
+    }
+}
+
+class ShadowedCartesianPt extends CartesianPt {
+    int dx;
+    int dy;
+    ShadowedCartesianPt(int _x, int _y, int _dx, int _dy) {
+        super(_x, _y);
+        dx = _dx;
+        dy = _dy;
+    }
+    //--------------------------------
+    @Override
+    int distanceToO() {
+        return new CartesianPt(x + dx, y + dy).distanceToO();
+    }
+    @Override
+    public String toString() {
+        return "new " + getClass().getName() + "(" + x + ", " + y + ", " + dx+ ", " + dy + ")";
     }
 }
