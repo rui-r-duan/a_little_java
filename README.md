@@ -5,8 +5,14 @@ This book introduces a few Java design patterns which combine
 * Object-Oriented Programming,
 * Functional Programming (no side-effect, immutable data structures).
 
-We can use datatypes to describe the structure of data (e.g. PieD (sequential list), TreeD)  and use visitors (e.g. PieVisitorI, TreeVisitorI) to operate them.
+This book features Visitor Pattern.
 
-We can also use datatypes to describe the structure of computation (e.g. ExprD (tree)), and use visitors to evaluate (interprete) them.
+My thoughts:
 
-These list-like and tree-like structures are implemented using Composition Pattern to simulate Lisp **cons** cell.
+1. We can use datatypes to describe the structure of data (e.g. PieD (sequential list), TreeD)  and use visitors (e.g. PieVisitorI, TreeVisitorI) to operate them.
+
+2. We can also use datatypes to describe the structure of computation (e.g. ExprD (tree)), and use visitors to evaluate (interprete) them.
+
+3. These list-like and tree-like structures are implemented using Composite Pattern to simulate Lisp **cons** cell.
+
+4. The behaviors are all put in the visitors which are separated to the data structures that they manipulate.
