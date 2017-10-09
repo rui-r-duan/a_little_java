@@ -289,5 +289,40 @@ public class Main {
         System.out.println(tree8 + ".isFlat?\n" + tree8.accept(new IsFlatV()));
         System.out.println(tree8 + ".isSplit?\n" + tree8.accept(new IsSplitV()));
         System.out.println(tree8 + ".occurs(Fig):\n" + tree8.accept(new OccursV(new Fig())));
+
+        System.out.println("\nChapter 8. Like Father, Like Son");
+        System.out.println("Use Inheritance in Visitor Pattern. Expression Interpretation.\n");
+
+        // (+ 7 (* (- 4 3) 5)) => 12
+        ExprD expr1 =
+                new Plus(
+                        new Const(new Integer(7)),
+                        new Prod(
+                                new Diff(
+                                        new Const(new Integer(4)),
+                                        new Const(new Integer(3))),
+                                new Const(new Integer(5))));
+        IntEvalV intEvalV = new IntEvalV();
+        System.out.println(expr1 + ".eval():\n" + expr1.accept(intEvalV));
+
+        // (union {7, 5} (intersection (diff {4} {3}) {5})) => {7, 5}
+        // => rename the operators:
+        // => (+ {7, 5} (* (- {4} {3})) {5}))
+        // eval to => new Empty().add(new Integer(7)).add(new Integer(5))
+        ExprD expr2 =
+                new Plus(
+                        new Const(new Empty()
+                                .add(new Integer(7))
+                                .add(new Integer(5))),
+                        new Prod(
+                                new Diff(
+                                        new Const(new Empty()
+                                                .add(new Integer(4))),
+                                        new Const(new Empty()
+                                                .add(new Integer(3)))),
+                                new Const(new Empty()
+                                        .add(new Integer(5)))));
+        SetEvalV setEvalV = new SetEvalV();
+        System.out.println(expr2 + ".eval():\n" + expr2.accept(setEvalV));
     }
 }
