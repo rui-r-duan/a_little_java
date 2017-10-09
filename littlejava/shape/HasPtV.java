@@ -5,6 +5,11 @@ public class HasPtV implements ShapeVisitorI {
     public HasPtV(PointD _p) {
         p = _p;
     }
+    // A functional programmer would say that newHasPt and HasPtV are
+    // eta-equivalent.
+    ShapeVisitorI newHasPt(PointD p) {
+        return new HasPtV(p);
+    }
     //--------------------------------
     @Override
     public boolean forCircle(int r) {
@@ -19,6 +24,6 @@ public class HasPtV implements ShapeVisitorI {
     @Override
     public boolean forTrans(PointD q, ShapeD s) {
         // We hope this 'HasPtV' generator to be polymorphic for future extension.
-        return s.accept(new HasPtV(p.minus(q)));
+        return s.accept(newHasPt(p.minus(q)));
     }
 }
