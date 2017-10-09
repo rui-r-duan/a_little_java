@@ -18,6 +18,7 @@ public class HasPtV implements ShapeVisitorI {
 
     @Override
     public boolean forTrans(PointD q, ShapeD s) {
+        // We hope this 'HasPtV' generator to be polymorphic for future extension.
         return s.accept(new HasPtV(p.minus(q)));
     }
 }

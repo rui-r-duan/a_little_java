@@ -354,5 +354,23 @@ public class Main {
                         new Circle(10)));
         System.out.println(circle3 + ".hasPt(Cartisian(10,10))? " +
                 circle3.accept(new HasPtV(new CartesianPt(10, 10))));
+
+        System.out.println("\nUnion Shape");
+        ShapeD union1 = new Translation(
+                new CartesianPt(12, 2),
+                new Union(
+                        new Square(10),
+                        new Translation(
+                                new CartesianPt(4, 4),
+                                new Circle(5))));
+        System.out.println(union1 + ".hasPt(CartesianPt(12,6))?\n" +
+                union1.accept(new UnionHasPtV(new CartesianPt(12, 6))));
+        ShapeD union2 = new Translation(
+                new CartesianPt(3, 7),
+                new Union(
+                        new Square(10),
+                        new Circle(10)));
+        System.out.println(union2 + ".hasPt(CartesianPt(13,17))?\n" +
+                union2.accept(new UnionHasPtV(new CartesianPt(13, 17))));
     }
 }
