@@ -1,6 +1,6 @@
 package littlejava.pie;
 
 interface PieVisitorI {
-    PieD forBot();
-    PieD forTop(Object t, PieD r);
+    Object forBot();
+    Object forTop(Object t, PieD r);
 }

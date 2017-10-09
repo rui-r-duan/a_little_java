@@ -140,7 +140,7 @@ public class Main {
 
         // The following RemV and SubstV variables are added for Chapter 6
 
-        PieD pie4 = pie3.accept(new RemV(new AnchovyTop()));
+        PieD pie4 = (PieD)pie3.accept(new RemV(new AnchovyTop()));
         System.out.println(pie3 + ".remA():\n\t" + pie4);
         System.out.println(pie4 + ".remA(): " + pie4.accept(new RemV(new AnchovyTop())));
 
@@ -329,7 +329,7 @@ public class Main {
         System.out.println(expr2 + ".eval():\n" + expr2.accept(setEvalV));
 
         System.out.println("\nChapter 9. Be a Good Visitor");
-        System.out.println("Extension of interfaces; Factory Method Pattern for polymorphic generator");
+        System.out.println("Extension of interfaces; Factory Method Pattern for polymorphic generator\n");
         PointD point7 = new ShadowedManhattanPt(2, 3, 1, 0);
         System.out.println(point7 + ".distanceToO(): " + point7.distanceToO());
         PointD point8 = new ShadowedCartesianPt(12, 5, 3, 4);
@@ -373,5 +373,10 @@ public class Main {
                         new Circle(10)));
         System.out.println(union2 + ".hasPt(CartesianPt(13,17))?\n" +
                 union2.accept(new UnionHasPtV(new CartesianPt(13, 17))));
+
+        System.out.println("\nChapter 10. The State of Things to Come");
+        System.out.println("\n");
+        PieManM pieman = new PieManM();
+        System.out.println(pieman + ".occTop(AnchovyTop): " + pieman.occTop(new AnchovyTop()));
     }
 }

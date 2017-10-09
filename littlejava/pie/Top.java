@@ -8,7 +8,7 @@ public class Top extends PieD {
         r = _r;
     }
     //--------------------------------
-    public PieD accept(PieVisitorI ask) {
+    public Object accept(PieVisitorI ask) {
         return ask.forTop(t, r);
     }
 

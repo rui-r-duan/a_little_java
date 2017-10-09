@@ -13,10 +13,10 @@ public class LtdSubstV extends SubstV {
         }
         else {
             if (o.equals(t)) {
-                return new Top(n, r.accept(new LtdSubstV(c - 1, n, o)));
+                return new Top(n, (PieD)r.accept(new LtdSubstV(c - 1, n, o)));
             }
             else {
-                return new Top(t, r.accept(this));
+                return new Top(t, (PieD)r.accept(this));
             }
         }
     }
