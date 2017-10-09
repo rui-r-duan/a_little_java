@@ -1,6 +1,6 @@
 package littlejava.pie;
 
-public class LtdSubstV extends SubstD {
+public class LtdSubstV extends SubstV {
     int c;
     public LtdSubstV(int _c, Object _n, Object _o) {
         super(_n, _o); // call to 'super()' must be first statement in constructor body
