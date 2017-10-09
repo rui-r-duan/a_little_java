@@ -6,7 +6,7 @@ interface ExprVisitorI {
     Object forConst(Object c);
 }
 
-class IntEvalV implements ExprVisitorI {
+abstract class EvalD implements ExprVisitorI {
     public Object forPlus(ExprD l, ExprD r) {
         return plus(l.accept(this), r.accept(this));
     }
@@ -23,6 +23,12 @@ class IntEvalV implements ExprVisitorI {
         return c;
     }
 
+    abstract Object plus(Object l, Object r);
+    abstract Object diff(Object l, Object r);
+    abstract Object prod(Object l, Object r);
+}
+
+class IntEvalV extends EvalD {
     // We agree to avoid the following kind of arithmetic expressions
     // in which there is non-integer Const.
     // e.g.
@@ -48,19 +54,15 @@ class IntEvalV implements ExprVisitorI {
     }
 }
 
-class SetEvalV extends IntEvalV {
-
-    @Override
+class SetEvalV extends EvalD {
     Object plus(Object l, Object r) {
         return ((SetD)l).plus((SetD)r);
     }
 
-    @Override
     Object diff(Object l, Object r) {
         return ((SetD)l).diff((SetD)r);
     }
 
-    @Override
     Object prod(Object l, Object r) {
         return ((SetD)l).prod((SetD)r);
     }
