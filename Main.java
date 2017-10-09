@@ -1,4 +1,5 @@
 import littlejava.pie.*;
+import littlejava.shape.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Main {
                 new Base(new Boolean(false)));
 
         System.out.println("\nChapter 2. Methods to Our Madness\n");
-        System.out.println("PointD.distanceToO():");
+        System.out.println("littlejava.shape.PointD.distanceToO():");
         PointD point1 = new CartesianPt(3, 4);
         PointD point2 = new ManhattanPt(3, 4);
         System.out.println(point1 + ": " + point1.distanceToO() + "\n" +
@@ -60,7 +61,7 @@ public class Main {
         KebabD kebab5 = new Shallot(new Radish(new Holder(new Boolean(false))));
         System.out.println(kebab5 + ": " + kebab5.isVeggie());
 
-        System.out.println("\nPointD.closerToO()");
+        System.out.println("\nlittlejava.shape.PointD.closerToO()");
         ManhattanPt point3 = new ManhattanPt(3, 4);
         ManhattanPt point4 = new ManhattanPt(1, 5);
         System.out.println(point3 + ".closerToO(" + point4 + "): " +
