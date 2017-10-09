@@ -328,7 +328,8 @@ public class Main {
         SetEvalV setEvalV = new SetEvalV();
         System.out.println(expr2 + ".eval():\n" + expr2.accept(setEvalV));
 
-        System.out.println("\nChapter 9. Be a Good Visitor\n");
+        System.out.println("\nChapter 9. Be a Good Visitor");
+        System.out.println("Extension of interfaces; Factory Method Pattern for polymorphic generator");
         PointD point7 = new ShadowedManhattanPt(2, 3, 1, 0);
         System.out.println(point7 + ".distanceToO(): " + point7.distanceToO());
         PointD point8 = new ShadowedCartesianPt(12, 5, 3, 4);
