@@ -1,3 +1,5 @@
+import littlejava.pie.*;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("\nChapter 1. Modern Toys\n");
