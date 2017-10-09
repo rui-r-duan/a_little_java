@@ -1,19 +1,12 @@
 package littlejava.pie;
 
-public class LtdSubstV implements PieVisitorI {
+public class LtdSubstV extends SubstD {
     int c;
-    Object n;
-    Object o;
     public LtdSubstV(int _c, Object _n, Object _o) {
+        super(_n, _o); // call to 'super()' must be first statement in constructor body
         c = _c;
-        n = _n;
-        o = _o;
     }
     //--------------------------------
-    public PieD forBot() {
-        return new Bottom();
-    }
-
     public PieD forTop(Object t, PieD r) {
         if (c == 0) {
             return new Top(t, r);
