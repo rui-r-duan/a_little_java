@@ -23,7 +23,7 @@ public class Main {
                 new Base(new Boolean(false)));
 
         System.out.println("\nChapter 2. Methods to Our Madness\n");
-        System.out.println("littlejava.shape.PointD.distanceToO():");
+        System.out.println("shape.PointD.distanceToO():");
         PointD point1 = new CartesianPt(3, 4);
         PointD point2 = new ManhattanPt(3, 4);
         System.out.println(point1 + ": " + point1.distanceToO() + "\n" +
@@ -61,7 +61,7 @@ public class Main {
         KebabD kebab5 = new Shallot(new Radish(new Holder(new Boolean(false))));
         System.out.println(kebab5 + ": " + kebab5.isVeggie());
 
-        System.out.println("\nlittlejava.shape.PointD.closerToO()");
+        System.out.println("\nshape.PointD.closerToO()");
         ManhattanPt point3 = new ManhattanPt(3, 4);
         ManhattanPt point4 = new ManhattanPt(1, 5);
         System.out.println(point3 + ".closerToO(" + point4 + "): " +
@@ -401,5 +401,13 @@ public class Main {
         System.out.println(result); // remTop() always produces 0
         System.out.println("pieman2.occTop(Salmon): " + pieman2.occTop(new Salmon()));
         System.out.println("pieman1.occTop(Salmon): " + pieman1.occTop(new Salmon()));
+
+        System.out.println("\nMove a PointD");
+        PointD ptChild = new ManhattanPt(1, 4);
+        System.out.println(ptChild + ".distanceToO(): " + ptChild.distanceToO());
+        System.out.println(ptChild + ".moveBy(2, 8): " + ptChild.moveBy(2, 8));
+        PointD ptChildBalloon = new ShadowedManhattanPt(1, 4, 1, 1);
+        System.out.println(ptChildBalloon + ".distanceToO(): " + ptChildBalloon.distanceToO());
+        System.out.println(ptChildBalloon + ".moveBy(2, 8): " + ptChildBalloon.moveBy(2, 8));
     }
 }

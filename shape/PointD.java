@@ -16,6 +16,11 @@ public abstract class PointD {
     public PointD minus(PointD p) {
         return new CartesianPt(x - p.x, y - p.y);
     }
+    public int moveBy(int dx, int dy) {
+        x = x + dx; // modification
+        y = y + dy; // modification
+        return distanceToO();
+    }
     public abstract int distanceToO();
     public String toString() {
         return "new " + getClass().getName() + "(" + x + ", " + y + ")";
