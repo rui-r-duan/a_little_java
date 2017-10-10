@@ -13,16 +13,21 @@ public class SubstV implements PieVisitorI {
         o = _o;
     }
     //--------------------------------
-    public Object forBot() {
-        return new Bottom();
+    @Override
+    public Object forBot(Bottom that) {
+        return that;
     }
 
-    public Object forTop(Object t, PieD r) {
-        if (o.equals(t)) {
-            return new Top(n, (PieD)r.accept(this));
+    @Override
+    public Object forTop(Top that) {
+        if (o.equals(that.t)) {
+            that.t = n; // modification
+            that.r.accept(this); // modification
+            return that;
         }
         else {
-            return new Top(t, (PieD)r.accept(this));
+            that.r.accept(this); // modification
+            return that;
         }
     }
 }

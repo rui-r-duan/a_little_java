@@ -9,7 +9,7 @@ public class Top extends PieD {
     }
     //--------------------------------
     public Object accept(PieVisitorI ask) {
-        return ask.forTop(t, r);
+        return ask.forTop(this);
     }
 
     public String toString() {

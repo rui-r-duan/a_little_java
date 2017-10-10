@@ -7,17 +7,17 @@ public class OccursV implements PieVisitorI {
     }
     //--------------------------------
     @Override
-    public Object forBot() {
+    public Object forBot(Bottom that) {
         return new Integer(0);
     }
 
     @Override
-    public Object forTop(Object t, PieD r) {
-        if (t.equals(a)) {
-            return new Integer(((Integer)(r.accept(this))).intValue() + 1);
+    public Object forTop(Top that) {
+        if (that.t.equals(a)) {
+            return new Integer(((Integer)(that.r.accept(this))).intValue() + 1);
         }
         else {
-            return r.accept(this);
+            return that.r.accept(this);
         }
     }
 }
