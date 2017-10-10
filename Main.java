@@ -1,5 +1,5 @@
-import littlejava.pie.*;
-import littlejava.shape.*;
+import pie.*;
+import shape.*;
 
 public class Main {
     public static void main(String[] args) {

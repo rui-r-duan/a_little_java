@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class RemV implements PieVisitorI {
     Object o; // object to be removed

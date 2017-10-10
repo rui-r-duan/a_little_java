@@ -1,4 +1,4 @@
-package littlejava.shape;
+package shape;
 
 // Why do we need "implements UnionVisitorI" explicitly?
 // Answer: UnionHasPtV is used as a ShapeVisitorI, and in

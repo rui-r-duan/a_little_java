@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 interface PieVisitorI {
     Object forBot(Bottom that);

@@ -1,4 +1,4 @@
-package littlejava.shape;
+package shape;
 
 public abstract class PointD {
     int x;

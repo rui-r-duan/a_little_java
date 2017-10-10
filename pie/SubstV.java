@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class SubstV implements PieVisitorI {
     // In functional programming, a visitor with fields is called a closure

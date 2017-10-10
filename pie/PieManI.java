@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public interface PieManI {
     int addTop(Object t);

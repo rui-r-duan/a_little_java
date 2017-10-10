@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class Top extends PieD {
     Object t;

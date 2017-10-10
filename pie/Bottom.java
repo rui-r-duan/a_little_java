@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class Bottom extends PieD {
     public Object accept(PieVisitorI ask) {

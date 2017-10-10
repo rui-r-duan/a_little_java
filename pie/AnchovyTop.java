@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class AnchovyTop extends FishD {
     // The class Object is defined in a separate package, called java.lang.Object.

@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 // The postfix "M" is a reminder that the class manages a data structure.
 public class PieManM implements PieManI {

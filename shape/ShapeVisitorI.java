@@ -1,4 +1,4 @@
-package littlejava.shape;
+package shape;
 
 // We assume that we are not allowed to change ShapeVisitorI for
 // the new ShapeD variant Union.

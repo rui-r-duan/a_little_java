@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class OccursV implements PieVisitorI {
     Object a;

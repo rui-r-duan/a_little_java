@@ -1,4 +1,4 @@
-package littlejava.shape;
+package shape;
 
 public class HasPtV implements ShapeVisitorI {
     PointD p;

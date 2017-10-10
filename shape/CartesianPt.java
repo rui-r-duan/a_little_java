@@ -1,8 +1,8 @@
-package littlejava.shape;
+package shape;
 
 public class CartesianPt extends PointD {
     public CartesianPt(int _x, int _y) {
-        super(_x, _y); // without this, compiler reports error "There is no default constructor available in 'littlejava.shape.PointD'"
+        super(_x, _y); // without this, compiler reports error "There is no default constructor available in 'shape.PointD'"
     }
     //--------------------------------
 

@@ -1,4 +1,4 @@
-package littlejava.shape;
+package shape;
 
 public class Square extends ShapeD {
     int s;

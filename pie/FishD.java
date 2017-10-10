@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 abstract class FishD {
     public String toString() {

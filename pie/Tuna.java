@@ -1,4 +1,4 @@
-package littlejava.pie;
+package pie;
 
 public class Tuna extends FishD {
     public boolean equals(Object o) {

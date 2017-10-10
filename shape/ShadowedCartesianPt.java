@@ -1,4 +1,4 @@
-package littlejava.shape;
+package shape;
 
 public class ShadowedCartesianPt extends CartesianPt {
     int dx;
