@@ -375,7 +375,7 @@ public class Main {
                 union2.accept(new UnionHasPtV(new CartesianPt(13, 17))));
 
         System.out.println("\nChapter 10. The State of Things to Come");
-        System.out.println("\n");
+        System.out.println("Assignments and states; true Visitor Pattern\n");
         PieManI pieman1 = new PieManM();
         System.out.println("pieman1 = " + pieman1);
         System.out.println("pieman1.occTop(AnchovyTop): " + pieman1.occTop(new AnchovyTop()));
