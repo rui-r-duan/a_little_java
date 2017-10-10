@@ -13,6 +13,11 @@ public class OccursV implements PieVisitorI {
 
     @Override
     public Object forTop(Object t, PieD r) {
-        return null;
+        if (t.equals(a)) {
+            return new Integer(((Integer)(r.accept(this))).intValue() + 1);
+        }
+        else {
+            return r.accept(this);
+        }
     }
 }

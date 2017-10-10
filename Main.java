@@ -376,7 +376,30 @@ public class Main {
 
         System.out.println("\nChapter 10. The State of Things to Come");
         System.out.println("\n");
-        PieManM pieman = new PieManM();
-        System.out.println(pieman + ".occTop(AnchovyTop): " + pieman.occTop(new AnchovyTop()));
+        PieManI pieman1 = new PieManM();
+        System.out.println("pieman1 = " + pieman1);
+        System.out.println("pieman1.occTop(AnchovyTop): " + pieman1.occTop(new AnchovyTop()));
+        System.out.println("pieman1.addTop(nchovyTop): " + pieman1.addTop(new AnchovyTop()));
+        System.out.println("pieman1.occTop(AnchovyTop): " + pieman1.occTop(new AnchovyTop()));
+        System.out.println("pieman1.addTop(AnchovyTop): " + pieman1.addTop(new AnchovyTop()));
+        System.out.println("pieman1.occTop(AnchovyTop): " + pieman1.occTop(new AnchovyTop()));
+        System.out.println("pieman1.substTop(Tuna, AnchovyTop): " +
+                pieman1.substTop(new Tuna(), new AnchovyTop()));
+        System.out.println("pieman1.occTop(AnchovyTop): " + pieman1.occTop(new AnchovyTop()));
+        PieManI pieman2 = new PieManM();
+        pieman2.addTop(new AnchovyTop());
+        pieman2.addTop(new AnchovyTop());
+        pieman2.addTop(new Salmon());
+        pieman2.addTop(new Tuna());
+        pieman2.addTop(new Tuna());
+        int result = pieman2.substTop(new Tuna(), new AnchovyTop());
+        System.out.println("pieman2\n.addTop(Anchovy)" +
+                "\n.addTop(Anchovy)\n.addTop(Salmon)\n.addTop(Tuna)\n.addTop(Tuna):");
+        System.out.println(result);
+        result = pieman2.remTop(new Tuna());
+        System.out.println("pieman2.remTop(Tuna):");
+        System.out.println(result); // remTop() always produces 0
+        System.out.println("pieman2.occTop(Salmon): " + pieman2.occTop(new Salmon()));
+        System.out.println("pieman1.occTop(Salmon): " + pieman1.occTop(new Salmon()));
     }
 }
